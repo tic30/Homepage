@@ -10,14 +10,40 @@ $(window).scroll(function() {
 
 //smooth scroll
 $(document).ready(function() {
-			$('#mainNav').localScroll({duration:500});
-   			$('#btn1').localScroll({duration:500});
-			$('#btn2').localScroll({duration:500});
-			$('#btn3').localScroll({duration:500});
-			$('#btn4').localScroll({duration:500});
-			$('#pf6').localScroll({duration:500});
-			$('#email-btn').localScroll({duration:300});
-		});
+	
+	//scroll timer
+	$('#mainNav').localScroll({duration:500});
+   	$('.btn1').localScroll({duration:500});
+	$('#btn2').localScroll({duration:500});
+	$('#btn3').localScroll({duration:500});
+	$('#btn4').localScroll({duration:500});
+	$('#pf6').localScroll({duration:500});
+	$('#email-btn').localScroll({duration:300});
+	/* ========================================================================= */
+	/*	Fix Slider Height
+	/* ========================================================================= */	
+
+    // Slider Height
+    var slideHeight = $(window).height();
+    //slideHeight = slideHeight *0.95;
+    $('.carousel .carousel-inner .item').css('height',slideHeight);
+	$('.carousel .carousel-inner .item img').css('height',slideHeight);
+    $(window).resize(function(){'use strict',
+        $('.carousel .carousel-inner .item').css('height',slideHeight);
+    });
+	
+	
+	
+	$("#works, #testimonial").owlCarousel({	 
+		navigation : true,
+		pagination : false,
+		slideSpeed : 700,
+		paginationSpeed : 400,
+		singleItem:true,
+		navigationText: ["<i class='fa fa-angle-left fa-lg'></i>","<i class='fa fa-angle-right fa-lg'></i>"]
+	});
+
+});
 		
 //ESC to close popup
 /*		$(document).keydown(function(e) {
@@ -30,12 +56,13 @@ $(document).ready(function() {
 
 //display fadeIn animation
 $(window).scroll(function() {
-if($(document).scrollTop() > 200)
-	$('#about-inner').addClass('animated fadeInRight');
+if($(document).scrollTop() > 200){
+	$('#aboutleft').addClass('animated fadeInLeft');
+	$('#aboutright').addClass('animated fadeInRight');}
 if($(document).scrollTop() > 500)
 	$('#services').addClass('animated-slow fadeInRight');
 if($(document).scrollTop() > 1200)
-	$('#portfolio-inner').addClass('animated-slow fadeInUp');
+	$('#project-header').addClass('animated-slow fadeInDown');
 if($(document).scrollTop() > 2100){
 	$('#contact1').addClass('animated-slow fadeInDown');
 	$('#contact2').addClass('animated-slow fadeInLeft');
@@ -44,12 +71,14 @@ if($(document).scrollTop() > 2800)
 	$('#map-canvas').addClass('animated-slow fadeInUp');
 });
 
+//alerts
 function comingAlert() {
     alert("Coming soon!");
 }
 function weChatClick(){
 	alert("Open WeChat and find me by searching: CHorizon");
 }
+
 /* ==========  START GOOGLE MAP ========== */
 
 // When the window has finished loading create our google map below
@@ -139,9 +168,80 @@ function initMap() {
 
 // ========== END GOOGLE MAP ========== //
 
-/*
+
 var wow = new WOW ({
 	offset:       75,          // distance to the element when triggering the animation (default is 0)
 	//mobile:       false,       // trigger animations on mobile devices (default is true)
 });
-wow.init();*/
+wow.init();
+
+/* ========================================================================= */
+/*  Welcome Section Slider
+/* ========================================================================= */
+
+$(function() {
+
+    var Page = (function() {
+
+        var $navArrows = $( '#nav-arrows' ),
+            $nav = $( '#nav-dots > span' ),
+            slitslider = $( '#slider' ).slitslider( {
+                onBeforeChange : function( slide, pos ) {
+
+                    $nav.removeClass( 'nav-dot-current' );
+                    $nav.eq( pos ).addClass( 'nav-dot-current' );
+
+                }
+            } ),
+
+            init = function() {
+
+                initEvents();
+                
+            },
+            initEvents = function() {
+
+                // add navigation events
+                $navArrows.children( ':last' ).on( 'click', function() {
+
+                    slitslider.next();
+                    return false;
+
+                } );
+
+                $navArrows.children( ':first' ).on( 'click', function() {
+                    
+                    slitslider.previous();
+                    return false;
+
+                } );
+
+                $nav.each( function( i ) {
+                
+                    $( this ).on( 'click', function( event ) {
+                        
+                        var $dot = $( this );
+                        
+                        if( !slitslider.isActive() ) {
+
+                            $nav.removeClass( 'nav-dot-current' );
+                            $dot.addClass( 'nav-dot-current' );
+                        
+                        }
+                        
+                        slitslider.jump( i + 1 );
+                        return false;
+                    
+                    } );
+                    
+                } );
+
+            };
+
+            return { init : init };
+
+    })();
+
+    Page.init();
+
+});

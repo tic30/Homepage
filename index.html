@@ -12,7 +12,7 @@
     <title>Chu's Homepage</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -27,21 +27,21 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapsed">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Tianxin Chu's Homepage</a>
+                <a class="navbar-brand" class="page-scroll" href="#page-top">Tianxin Chu's Homepage</a><!-- class: page-scroll-->
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="navbar-collapsed">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">About</a> <!--class="page-scroll"-->
                     </li>
                     <li>
                         <a class="page-scroll" href="#services">Skills</a>
@@ -60,33 +60,87 @@
     </nav>
 
     <header>
-        <div class="header-content">
-            <div class="header-content-inner animated-slow fadeInRight">
-            	<img src="img/me.jpg" class="img-roundthumbnail " alt="me" width="130px" height="130px">
-                <br/>
-                <h1>Your favorite programmer is here</h1>
-                <br/>
+	<!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="header-content carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item first-slide active">
+        	<div class="imgdiv animated-slow fadeInLeft"><img class="img1" src="img/portrait.png" alt="Portrait"></div>
+            <div class="carousel-caption animated-slow fadeInRight">
+                <h1>Your favorite programer is here</h1>
                 <hr>
-                <br/><br/>
-                <!--<p>I am here to help!</p>-->
-                <div id="btn1"><a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a></div>
+                <p>Need A Programer?<br/>A Software Designer?<br/>I Am Here For You</p>
+                <div class="btn1"><a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a></div>
             </div>
         </div>
+        <div class="item second-slide"> 
+          <img class="second-slide" src="img/header2.jpg" alt="Second slide">
+            <div class="carousel-caption animated-slow fadeInUp">
+              	<h1>Get ready</h1>
+                <p>My magic happens with PC and phone.</p>
+                <div class="btn1"><a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a></div>
+            </div>
+        </div>
+        <div class="item third-slide">
+          <img class="third-slide" src="img/header3.jpg" alt="Third slide">
+            <div class="carousel-caption animated-slow fadeInDown">
+              	<h1>smile</h1>
+                <div class="btn1"><a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a></div>
+            </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
     </header>
 
-    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div id="about-inner" class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">I've got what you need!</h2>
-                    <hr class="light">
-                    <p class="text-faded">I am enthusiastic with any programming work related to GUI  and database. I am hard-working and always on time! Take a look at what I can do and what I've done!</p>
-                    <div id="btn2"><a href="#services" class="btn btn-default btn-xl">Get Started!</a></div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- about section -->
+			<section class="bg-primary" id="about">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4" id="aboutleft">
+							<div class="recent-works">
+								<h3>Recent Works</h3>
+								<div id="works">
+									<div class="work-item">
+										<p>I am building websites which have PHP codes that can connect to MySQL database, I am also using SQLPLUS to program database in Oracle environment, while manipulating it using JDBC.</p>
+									</div>
+									<div class="work-item">
+										<p>On the other hand, I am part of a group project which uses Java to program a software package about railway control system.</p>
+									</div>
+									<div class="work-item">
+										<p>What's more, I am building a mobile learning app on Android to attend XPrice competetion in 2017.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-7 col-md-offset-1" id="aboutright">
+							<div class="welcome-block">
+								<h3>I've got what you need!</h3>								
+						     	 <div class="message-body">
+									<img src="img/me.jpg" alt="me" width="100px" height="100px">
+						       		<p>I am enthusiastic with any programming work related to GUI  and database. I am hard-working and always on time! Take a look at what I can do and what I've done!</p>
+						     	 </div>
+						       	<div id="btn2"><a href="#services" class="btn btn-default btn-xl">Get Started!</a></div>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</section>
 
+	<!-- services section -->
     <section id="services" style="min-height:70%">
         <div class="container">
             <div class="row">
@@ -109,7 +163,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i><img src="img/mobile.png" alt="" style="width:50px;padding-bottom:10px;"></i>
+                        <i><img src="img/mobile.png" alt="" style="width:55px;padding-bottom:10px;"></i>
                         <h3>Mobile</h3>
                         <p class="text-muted">Android / IOS</p>
                     </div>
@@ -139,7 +193,7 @@
     	<aside style="background-color:white; height:35px; padding:0;"></aside>
     	<aside class="bg-dark overlay" style="height:235px;">
         <div class="container text-center">
-            <div class="call-to-action">
+            <div class="call-to-action" id="project-header">
             	<br/><br/>
                 <h2>My Projects</h2>
                 <hr>               
@@ -165,7 +219,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a onClick="comingAlert()" class="portfolio-box">
+                    <a href="https://drive.google.com/open?id=0B1dSWHM51dn-T2k0MmxOQ2FJeEE" target="_blank" class="portfolio-box">
                         <img src="img/portfolio/xprice.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -180,7 +234,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a onClick="comingAlert()" class="portfolio-box">
+                    <a href="https://github.com/tic30/CTC-Railway-System-By-RedPanda-Coding.git" target="_blank" class="portfolio-box">
                         <img src="img/portfolio/ctc.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -196,7 +250,7 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="https://scratch.mit.edu/projects/93639641/" target="_blank" class="portfolio-box">
-                        <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
+                        <img src="img/portfolio/4.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -225,7 +279,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6" id="pf6">
-                    <a href="#contact" class="portfolio-box">
+                    <a href="#extra" class="portfolio-box" data-toggle="collapse">
                         <img src="img/portfolio/other.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -233,7 +287,7 @@
                                     More about me
                                 </div>
                                 <div class="project-name">
-                                    Let me show you when we meet!
+                                    More about me
                                 </div>
                             </div>
                         </div>
@@ -241,12 +295,16 @@
                 </div>
             </div>
         </div>
+        
     </section>
 
-    <aside class="bg-primary">
+    <aside id="extra" class="bg-primary collapse" >
         <div class="container text-center">
             <div class="call-to-action">
-                <h2>A lot more fun! A lot better future!</h2>
+                <h2>Mmm... I'm not gonna tell u
+                <img src="img/facebook.gif" style="padding:0 10px; border-radius:30%; height:40px; display:inline" alt=""></h2>
+                <hr style="border-color:#FFF">
+                <p>Let me show you when we meet!</p>
                 <div id="btn4"><a href="#contact" class="btn btn-default btn-xl">Contact Me Now!</a></div>
             </div>
         </div>
@@ -290,7 +348,13 @@
                                 <div>
 									<a href="https://www.facebook.com/tianxin.chu" target="_blank" style="margin-right:20px;"><i class="fa fa-facebook fa-3x"></i></a>
 									<a href="https://www.linkedin.com/in/tianxin-chu-980881a4" target="_blank" style="margin-right:20px;"><i class="fa fa-linkedin fa-3x"></i></a>
-									<a onClick="weChatClick()" style="margin-right:20px;"><i class="fa fa-weixin fa-3x"></i></a>
+									<!--<a onClick="weChatClick()" style="margin-right:20px;"><i class="fa fa-weixin fa-3x"></i></a>-->
+                                    <div class="dropup" style="margin-right:20px; display:inline">
+    									<a class="dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-weixin fa-3x"></i></a>
+ 									 	<ul class="dropdown-menu barcode">
+  											<img src="img/wechatbarcode.jpg" class="barcode" alt="">
+  										</ul>
+                                    </div>
 									<a href="http://weibo.com/u/1322387891/" target="_blank"><i class="fa fa-weibo fa-3x"></i></a>
 								</div>
 							</address>
@@ -306,28 +370,24 @@
             
     <footer style="background-color:#333; color:#999; width:100%; text-align:center;">
  		<br /><br />© Copyright 2016&nbsp;&nbsp;&nbsp;&nbsp;Chu,Tianxin&nbsp;&nbsp;&nbsp;&nbsp;University of Pittsburgh, Pittsburgh, PA<br /><br /><br />
+        <!--<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NWWSzabWCn8?autoplay=1&loop=1&playlist=NWWSzabWCn8" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/NWWSzabWCn8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>-->
+
 	</footer>
-
-    <!-- jQuery -->
-    <!--<script src="js/jquery.js"></script>-->
-
-    <!-- Bootstrap Core JavaScript -->
+    
+    <!-- JavaScript -->
+    
+    <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js"></script>
-	<!--my scripts-->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" type="text/javascript"></script>
 	<script src="js/jquery.localscroll.js" type="text/javascript"></script> 
 	<script src="js/jquery.scrollTo.js" type="text/javascript"></script>
+    <!--my scripts-->
 	<script src="js/myjs.js" type="text/javascript"></script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
         async defer></script>
-    <!--collapse-->
-    <!-- Plugin JavaScript -->
-    <!--<script src="js/jquery.easing.min.js"></script>-->
-    <!--<script src="js/jquery.fittext.js"></script>-->
+    
     <script src="js/wow.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <!--<script src="js/creative.js"></script>-->
+    
 </body>
 
 </html>
