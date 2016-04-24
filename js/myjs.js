@@ -32,8 +32,6 @@ $(document).ready(function() {
         $('.carousel .carousel-inner .item').css('height',slideHeight);
     });
 	
-	
-	
 	$("#works, #testimonial").owlCarousel({	 
 		navigation : true,
 		pagination : false,
@@ -44,15 +42,6 @@ $(document).ready(function() {
 	});
 
 });
-		
-//ESC to close popup
-/*		$(document).keydown(function(e) {
-    	// ESCAPE key pressed
-    		if (e.keyCode == 27) {
-      	  		document.getElementById('light').style.display='none';
-				document.getElementById('fade').style.display='none';
-    		}
-		});*/
 
 //display fadeIn animation
 $(window).scroll(function() {
@@ -167,13 +156,6 @@ function initMap() {
 }
 
 // ========== END GOOGLE MAP ========== //
-
-
-var wow = new WOW ({
-	offset:       75,          // distance to the element when triggering the animation (default is 0)
-	//mobile:       false,       // trigger animations on mobile devices (default is true)
-});
-wow.init();
 
 /* ========================================================================= */
 /*  Welcome Section Slider
